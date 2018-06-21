@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using TTTH.Common;
 using TTTH.DataBase;
+using static TTTH.DataBase.DataContext;
 using TblAccount = TTTH.DataBase.Schema.Account;
 
 namespace TrungTamTinHoc.Areas.Home.Models
@@ -31,7 +32,7 @@ namespace TrungTamTinHoc.Areas.Home.Models
                 else
                 {
                     string newpass = Common.newPassword();
-                    taiKhoan.Password = Common.GetMD5(newpass);
+                    taiKhoan.Password = new TaoDataBase().GetMD5(new TaoDataBase().GetSimpleMD5(newpass));
                     context.SaveChanges();
                     transaction.Commit();
                     result.Code = 200;

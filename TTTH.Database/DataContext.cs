@@ -781,7 +781,7 @@ namespace TTTH.DataBase
             /// <returns>
             /// Chuỗi sau khi đã được mã hóa.
             /// </returns>
-            public static string GetMD5(string str)
+            public string GetMD5(string str)
             {
                 str = "TRUNGTAMTINHOC" + str + "TRUNGTAMTINHOC";
                 string str_md5 = "";
@@ -804,7 +804,7 @@ namespace TTTH.DataBase
             /// <returns>
             /// Chuỗi sau khi đã được mã hóa
             /// </returns>
-            public static string GetSimpleMD5(string str)
+            public string GetSimpleMD5(string str)
             {
                 string str_md5 = "";
                 byte[] mang = System.Text.Encoding.UTF8.GetBytes(str);
