@@ -6,7 +6,6 @@
  * */
 
 $(document).ready(function () {
-    alert("ahih");
     InitForgetPass();
     InitEventForgetPass();
 });
@@ -52,7 +51,6 @@ function InitEventForgetPass() {
  * */
 function CheckEmail() {
     try {
-        alert("check");
         if (!validate('#form-lostpassword')) {
             $.ajax({
                 type: 'POST',
@@ -72,7 +70,7 @@ function CheckEmail() {
 function CheckEmailSuccess(res) {
     try {
         if (res.Code == 200) {
-            alert('bạn vui lòng vào mail để nhận lại password');
+            alert('Bạn vui lòng vào mail để nhận lại password');
         } else {
             jMessage(0, function (ok) { },
                 createMessage(res.MsgNo, res.ThongTinBoSung1, '', ''), 4);
