@@ -1,0 +1,58 @@
+﻿@model Paging
+@using TTTH.Common
+@{
+    Paging pages = new Paging();
+    if (Model != null)
+    {
+        pages = Model;
+        int lastPage = pages.TotalPages;
+        int firstPage = 1;
+        int curentPage = pages.CurrentPage;
+        int pageShow = pages.NumberOfRecord;
+        if (lastPage > pageShow)
+        {
+            if ((lastPage - curentPage) < pageShow / 2)
+            {
+                firstPage = lastPage - pageShow;
+            }
+            else if (curentPage - firstPage < pageShow / 2)
+            {
+                lastPage = firstPage + pageShow;
+            }
+            else
+            {
+                firstPage = curentPage - pageShow / 2;
+                lastPage = curentPage + pageShow / 2;
+            }
+        }
+        if (lastPage > firstPage)
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="pagination-content number">
+                        <center>
+                            <ul class="pagination">
+                                @for (int i = firstPage; i <= lastPage; i++)
+                                {
+                                    if (i == curentPage)
+                                    {
+                                        <li class="active">
+                                            <a href="javascript:void(0)">@i</a>
+                                            <input type="hidden" id="curentPage" name="curentPage" value="@i" />
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li><a href="javascript:void(0)" class="page" name="page" page="@i">@i</a></li>
+                                    }
+
+                                }
+                            </ul>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+}
+

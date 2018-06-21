@@ -1,0 +1,119 @@
+﻿@using Resources;
+<!--Newsletter Area Start-->
+<div class="newsletter-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-5">
+                <div class="newsletter-content">
+                    <h3>@UserLang.Subscribe</h3>
+                    <h2>@UserLang.ToOutNewsleetter</h2>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-7">
+                <div class="newsletter-form">
+                    <form action="#">
+                        <div class="subscribe-form">
+                            <input type="email" name="email" placeholder="@UserLang.EnterYourEmailAddress">
+                            <button type="submit">@UserLang.Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Newsletter Area-->
+<!--Footer Widget Area Start-->
+<div class="footer-widget-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-4">
+                <div class="single-footer-widget">
+                    <div class="footer-logo">
+                        <a href="@Url.RouteUrl("Home")"><img src="~/public/img/common/logo.png" alt=""></a>
+                    </div>
+                    <p>Chúng tôi đã và đang xây dựng một giấc mơ, giấc mơ mang đến cho mọi người những khóa học CNTT hữu ích cho cuộc sống, và giờ đây, giấc mơ của chúng tôi là các bạn nhỏ</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/ipro.edu.vn/"><i class="zmdi zmdi-facebook"></i></a>
+                        <a href="#"><i class="zmdi zmdi-rss"></i></a>
+                        <a href="#"><i class="zmdi zmdi-google-plus"></i></a>
+                        <a href="#"><i class="zmdi zmdi-pinterest"></i></a>
+                        <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="single-footer-widget">
+                    <h3>@UserLang.MenuContact</h3>
+                    <span><i class="fa fa-phone"></i>+84 914 668 445</span>
+                    <span><i class="fa fa-envelope"></i>iPro.edu.vn@gmail.com</span>
+                    <span><i class="fa fa-globe"></i>http://ipro.edu.vn/</span>
+                    <span><i class="fa fa-map-marker"></i>82 Lê Duẩn, Hải Châu, Đà Nẵng</span>
+                </div>
+            </div>
+            <div class="col-md-3 hidden-sm">
+                <div class="single-footer-widget">
+                    <h3>@UserLang.UserfullLink</h3>
+                    <ul class="footer-list">
+                        <li><a href="#">@UserLang.OurTeacher</a></li>
+                        <li><a href="#">@UserLang.MenuCourses</a></li>
+                        <li><a href="@Url.RouteUrl("Support")">@UserLang.Support</a></li>
+                        <li><a href="@Url.RouteUrl("TermsConditions")">@UserLang.TermsConditions</a></li>
+                        <li><a href="@Url.RouteUrl("PrivacyPolicy")">@UserLang.PrivacyPolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="single-footer-widget">
+                    <h3>@UserLang.Album</h3>
+                    <div class="instagram-image">
+                        <div class="footer-img">
+                            <a href="#"><img src="~/public/img/footer/1.jpg" alt=""></a>
+                        </div>
+                        <div class="footer-img">
+                            <a href="#"><img src="~/public/img/footer/2.jpg" alt=""></a>
+                        </div>
+                        <div class="footer-img">
+                            <a href="#"><img src="~/public/img/footer/3.jpg" alt=""></a>
+                        </div>
+                        <div class="footer-img">
+                            <a href="#"><img src="~/public/img/footer/4.jpg" alt=""></a>
+                        </div>
+                        <div class="footer-img">
+                            <a href="#"><img src="~/public/img/footer/5.jpg" alt=""></a>
+                        </div>
+                        <div class="footer-img">
+                            <a href="#"><img src="~/public/img/footer/6.jpg" alt=""></a>
+                        </div>
+                        <div class="footer-img">
+                            <a href="#"><img src="~/public/img/footer/7.jpg" alt=""></a>
+                        </div>
+                        <div class="footer-img">
+                            <a href="#"><img src="~/public/img/footer/8.jpg" alt=""></a>
+                        </div>
+                        <div class="footer-img">
+                            <a href="#"><img src="~/public/img/footer/9.jpg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Footer Widget Area-->
+<!--Footer Area Start-->
+<footer class="footer-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-7">
+                <span>Copyright &copy; IPRO 2018.All right reserved.</span>
+            </div>
+            <div class="col-md-6 col-sm-5">
+                <div class="column-right">
+                    <span>@UserLang.PrivacyPolicy, @UserLang.TermsConditions</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--End of Footer Area-->

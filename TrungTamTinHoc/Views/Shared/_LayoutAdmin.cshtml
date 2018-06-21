@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TTTH::Admin - @ViewBag.Title</title>
+    @Styles.Render("~/public/css/adminCommon")
+    @RenderSection("css", required: false)
+</head>
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            @Html.Partial("~/Views/PartialAdmin/_LeftMenu.cshtml")
+            @Html.Partial("~/Views/PartialAdmin/_TopMenu.cshtml")
+            <!-- page content -->
+            <div class="right_col" role="main">
+                @RenderBody()
+            </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            <footer>
+                <div class="custom-footer">
+                    Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+        </div>
+    </div>
+    <div id="call-ajax-fade">
+    </div>
+    <div id="call-ajax-content">
+        <img src="public/img/common/page-loader.gif" class="img-loading-ajax" alt="loading" />
+    </div>
+    @Scripts.Render("~/public/js/adminCommon")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

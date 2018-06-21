@@ -1,0 +1,136 @@
+﻿<!--Header Area Start-->
+@{
+    Account account = Common.GetAccount();
+}
+@using Resources;
+@using TTTH.DataBase.Schema;
+@using TTTH.Common;
+<header>
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-5 hidden-xs">
+                    <span>@UserLang.HaveAnyQuestion +84914 668 445</span>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-7 col-xs-12">
+                    <div class="header-top-right">
+                        @if (account == null)
+                        {
+                            <div class="content">
+                                <a href="@Url.RouteUrl("UserLogin")"><i class="zmdi zmdi-sign-in"></i> @UserLang.Login</a>
+                            </div>
+                            <div class="content">
+                                <a href="@Url.RouteUrl("UserRegister")"><i class="zmdi zmdi-border-color"></i> @UserLang.Register</a>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="content">
+                                <a href="#"><i class="zmdi zmdi-account"></i> @account.Username</a>
+                            </div>
+                            <div class="content">
+                                <a href="javascript:void(0);" id="btn-logout" link ="@Url.RouteUrl("homeLogout")">
+                                    <i class="zmdi zmdi-border-color"></i>Logout
+                                </a>
+                            </div>
+                        }
+                        <div class="content">
+                            <a href="javascript:void(0);"> <i class="zmdi zmdi-globe"></i> @UserLang.Language</a>
+                            <ul class="account-dropdown">
+                                <li><a href="javascript:void(0);" class="lang" lang="vi">@UserLang.Vietnamese</a></li>
+                                <li><a href="javascript:void(0);" class="lang" lang="en">@UserLang.English</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-logo-menu sticker">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-12">
+                    <div class="logo">
+                        <a href="@Url.RouteUrl("Home")"><img src="~/public/img/common/logo.png" alt="Logo"></a>
+                    </div>
+                </div>
+                <div class="col-md-9 hidden-sm hidden-xs">
+                    <div class="mainmenu-area">
+                        <div class="mainmenu">
+                            <nav>
+                                <ul id="nav">
+                                    <li class="current">
+                                        <a href="@Url.RouteUrl("Home")">@UserLang.MenuHome</a>
+                                    </li>
+                                    <li><a href="@Url.RouteUrl("About")">@UserLang.MenuAbout</a></li>
+                                    <li>
+                                        <a href="#">@UserLang.MenuCourses</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#">Progamming For Kids – Cơ bản</a></li>
+                                            <li><a href="#">Progamming For Kids – Nâng Cao</a></li>
+                                            <li><a href="#">Progamming For Kids – Tổng Hợp</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">@UserLang.MenuApply</a>
+                                    </li>
+                                    <li><a href="@Url.RouteUrl("Contact")">@UserLang.MenuContact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <ul class="header-search">
+                            <li class="search-menu">
+                                <i id="toggle-search" class="zmdi zmdi-search-for"></i>
+                            </li>
+                        </ul>
+                        <!--Search Form-->
+                        <div class="search">
+                            <div class="search-form">
+                                <form id="search-form" action="#">
+                                    <input type="search" placeholder="@UserLang.SearchHere" name="search" />
+                                    <button type="submit">
+                                        <span><i class="fa fa-search"></i></span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <!--End of Search Form-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile Menu Area start -->
+    <div class="mobile-menu-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="mobile-menu">
+                        <nav id="dropdown">
+                            <ul>
+                                <li>
+                                    <a href="@Url.RouteUrl("Home")">@UserLang.MenuHome</a>
+                                </li>
+                                <li><a href="@Url.RouteUrl("About")">@UserLang.MenuAbout</a></li>
+                                <li>
+                                    <a href="#">@UserLang.MenuCourses</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="#">Progamming For Kids – Cơ bản</a></li>
+                                        <li><a href="#">Progamming For Kids – Nâng Cao</a></li>
+                                        <li><a href="#">Progamming For Kids – Tổng Hợp</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">@UserLang.MenuApply</a>
+                                </li>
+                                <li><a href="@Url.RouteUrl("Contact")">@UserLang.MenuContact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile Menu Area end -->
+</header>
+<!--End of Header Area-->

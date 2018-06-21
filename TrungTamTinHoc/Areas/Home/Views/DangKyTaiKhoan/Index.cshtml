@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@section css{
+}
+@section scripts{
+    @Scripts.Render("~/public/js/register");
+}
+@using Resources;
+<!--Breadcrumb Banner Area Start-->
+<div class="breadcrumb-banner-area pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center no-line">@UserLang.Register</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Breadcrumb Banner Area-->
+<!--Search Category Start-->
+<div class="search-category mb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <form id="form-register" action="@Url.RouteUrl("homeCreateAccount")">
+                    <div class="form-container">
+                        <div class="box-select">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input type="text" maxlength="50" tabindex="1" name="Username" id="Username" class="required" placeholder="@UserLang.Username" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="text" maxlength="50" tabindex="2" name="Firstname" id="Firstname" class="required" placeholder="@UserLang.Firstname" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" maxlength="50" tabindex="3" name="Lastname" id="Lastname" class="required" placeholder="@UserLang.Lastname" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <select class="gender" name="Gender" id="Gender">
+                                        <option value=""> @UserLang.Gender </option>
+                                        <option value="nam">@UserLang.Male</option>
+                                        <option value="nu"> @UserLang.Female </option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" name="Birthday" id="datepicker" class="required format-date" placeholder="@UserLang.Birthday" maxlength="50" tabindex="4" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input type="email" maxlength="50" tabindex="6" name="Email" id="Email" class="required" placeholder="Email" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input type="password" maxlength="50" tabindex="7" name="Password" id="Password" class="required" placeholder="@UserLang.Password" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input type="password" maxlength="50" tabindex="8" name="ConfirmPassword" id="ConfirmPassword" class="required" placeholder="@UserLang.ConfirmPassword" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label class="custom-check">
+                                        <span class="text-login">
+                                            @UserLang.Agree
+                                            <a href="@Url.RouteUrl("TermsConditions")">@UserLang.TermsConditions</a>
+                                            @UserLang.And
+                                            <a href="@Url.RouteUrl("PrivacyPolicy")">@UserLang.PrivacyPolicy</a>
+                                        </span>
+                                        <input type="checkbox" tabindex="9" id="agree" value="1">
+                                        <span class="checkmark"><span class="check"></span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <button type="button" tabindex="10" id="btn-register">@UserLang.Register</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Search Category-->

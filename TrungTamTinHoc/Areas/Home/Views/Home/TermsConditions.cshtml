@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Terms & Conditions";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    string termsConditions = ViewBag.termsConditions;
+}
+@section css{
+}
+@section scripts{
+}
+@using Resources;
+<!--Breadcrumb Banner Area Start-->
+<div class="breadcrumb-banner-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center">@UserLang.TermsConditions</h1>
+                    <div class="breadcrumb-bar">
+                        <ul class="breadcrumb">
+                            <li><a href="@Url.RouteUrl("Home")">@UserLang.MenuHome</a></li>
+                            <li>@UserLang.TermsConditions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Breadcrumb Banner Area-->
+<!--TermsConditions Page Area Start-->
+<div class="about-page-area section-padding">
+    <div class="container">
+        <div class="about-text-container">
+            @Html.Raw(termsConditions)
+        </div>
+    </div>
+</div>
+<!--End of TermsConditions Page Area-->

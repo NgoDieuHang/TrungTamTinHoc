@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Support";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    string support = ViewBag.support;
+}
+@section css{
+}
+@section scripts{
+}
+@using Resources;
+<!--Breadcrumb Banner Area Start-->
+<div class="breadcrumb-banner-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center">@UserLang.Support</h1>
+                    <div class="breadcrumb-bar">
+                        <ul class="breadcrumb">
+                            <li><a href="@Url.RouteUrl("Home")">@UserLang.MenuHome</a></li>
+                            <li>@UserLang.Support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Breadcrumb Banner Area-->
+<!--Support Page Area Start-->
+<div class="about-page-area section-padding">
+    <div class="container">
+        <div class="about-text-container">
+            @Html.Raw(support)
+        </div>
+    </div>
+</div>
+<!--End of Support Page Area-->

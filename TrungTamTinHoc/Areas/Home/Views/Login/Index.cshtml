@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@section css{
+}
+@section scripts{
+    <script>
+    var url = {
+        loginFB: '@Url.RouteUrl("homeCheckLoginfb")',
+        loginGG: '@Url.RouteUrl("homeCheckLogingg")'
+    }
+    </script>
+    <script src="https://apis.google.com/js/platform.js?onload=startApp" async defer></script>
+    @Scripts.Render("~/public/js/login");
+}
+@using Resources;
+<!--Breadcrumb Banner Area Start-->
+<div class="breadcrumb-banner-area pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center no-line">@UserLang.Login</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Breadcrumb Banner Area-->
+<!--Search Category Start-->
+<div class="search-category mb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <form id="form-login" action="@Url.RouteUrl("homeCheckLogin")">
+                    <div class="form-container">
+                        <div class="box-select">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input type="text" maxlength="50" tabindex="1" name="Username" id="Username" class="required" placeholder="@UserLang.Username" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input type="password" maxlength="50" tabindex="2" name="Password" id="Password" class="required" placeholder="@UserLang.Password" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <label class="custom-check">
+                                        <span class="text-login">@UserLang.RememberLogin</span>
+                                        <input type="checkbox" tabindex="3" id="Remember" value="1">
+                                        <span class="checkmark"><span class="check"></span></span>
+                                    </label>
+                                </div>
+                                <div class="col-sm-5 text-right">
+                                    <a href="@Url.RouteUrl("homeForgetPass")" tabindex="4" class="text-login">@UserLang.LostPassword</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <button type="button" tabindex="5" id="btn-login">@UserLang.Login</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <button type="button" tabindex="6" id="btn-login-FB" class="fb-color"><i class="zmdi zmdi-facebook"></i> Facebook</button>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button type="button" tabindex="7" id="btn-login-GG" class="gg-color"><i class="zmdi zmdi-google-plus"></i> Google</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Search Category-->

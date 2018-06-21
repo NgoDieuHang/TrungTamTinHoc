@@ -1,0 +1,19 @@
+﻿@model  HomeData
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    HomeData data = new HomeData();
+    if (Model != null)
+    {
+        data = Model;
+    }
+}
+@using TrungTamTinHoc.Areas.Home.Models.Schema
+@section css{
+}
+@section scripts{
+}
+@Html.Partial("Partial/_slide",data.Slides)
+@Html.Partial("Partial/_about",data.WhyUs)
+@Html.Partial("Partial/_course",data.Course)
+@Html.Partial("Partial/_outTeacher",data.NhungDieuDatDuocs)

@@ -1,0 +1,23 @@
+﻿@using Resources
+@{
+    string WhyUs = null;
+    if (Model != null)
+    {
+        WhyUs = Model;
+    }
+}
+<!--About Area Start-->
+<div class="about-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="about-container">
+                    <h3>TẠI SAO LẠI LÀ IPRO ?</h3>
+                    <p>@Html.Raw(@WhyUs)</p>
+                    <a class="button-default" href="#">@UserLang.LearnNow</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of About Area-->

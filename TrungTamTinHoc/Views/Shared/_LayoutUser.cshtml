@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="1031033693725197" property="fb:app_id">
+    <meta content="744867180266-aolnn8pggsh6h2dqi7ddaklr0mb239i7.apps.googleusercontent.com" name="google-signin-client_id">
+    <link rel="shortcut icon" type="image/x-icon" href="~/public/img/favicon.png">
+    <title>@ViewBag.Title || IPro</title>
+    @Styles.Render("~/public/css/userCommon")
+    @RenderSection("css", required: false)
+</head>
+<body class="page-user">
+    @Html.Partial("~/Views/PartialUser/_Header.cshtml")
+    @RenderBody()
+    @Html.Partial("~/Views/PartialUser/_Footer.cshtml")
+    <div id="call-ajax-fade">
+    </div>
+    <div id="call-ajax-content">
+        <img src="~/public/img/common/page-loader.gif" class="img-loading-ajax" alt="loading" />
+    </div>
+    @Scripts.Render("~/public/js/userCommon")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

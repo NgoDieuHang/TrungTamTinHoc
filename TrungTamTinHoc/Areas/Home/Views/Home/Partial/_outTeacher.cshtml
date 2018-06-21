@@ -1,0 +1,41 @@
+﻿@model IEnumerable<NhungDieuDatDuoc>
+@using TrungTamTinHoc.Areas.Home.Models.Schema
+@{
+    List<NhungDieuDatDuoc> NhungDieuDatDuocs = new List<NhungDieuDatDuoc>();
+    if (Model != null)
+    {
+        NhungDieuDatDuocs = Model.ToList();
+    }
+}
+<!--Testimonial Area Start-->
+<div class="testimonial-area" style="margin-bottom: 70px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-lg-offset-0 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                <div class="row">
+                    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+                        <div class="testimonial-image-slider text-center">
+                            @for (int i = 0; i < NhungDieuDatDuocs.Count; i++)
+                            {
+                                <div class="sin-testiImage">
+                                 <img src="@Html.Raw(NhungDieuDatDuocs[i].Icon)" alt="testimonial @(i%3 +1)"/>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-text-slider text-center">
+                    @for (int i = 0; i < NhungDieuDatDuocs.Count; i++)
+                    {
+                        <div class="sin-testiText">
+                            <h2>@Html.Raw(NhungDieuDatDuocs[i].Title) </h2>
+                            <p>@Html.Raw(NhungDieuDatDuocs[i].Content)</p>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Testimonial Area-->

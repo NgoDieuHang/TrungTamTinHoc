@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Slides>
+@using TrungTamTinHoc.Areas.Home.Models.Schema
+@using Resources
+@{
+    List<Slides> slides = new List<Slides>();
+    if (Model != null)
+    {
+        slides = Model.ToList();
+    }
+}
+<!--Slider Area Start-->
+<div class="slider-area">
+    <div class="preview-2">
+        <div id="nivoslider" class="slides">
+            @for (int i = 0; i < slides.Count; i++)
+             {
+            <img src="@slides[i].LinkAnh" alt="slide-img" title="#slider-@i-caption_@i" />
+              }
+
+        </div>
+        @for (int i = 0; i < slides.Count; i++)
+        {
+        <div id="slider-@i-caption_@i" class="nivo-html-caption nivo-caption">
+            <div class="banner-content slider-@i">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="text-content-wrapper">
+                                <div class="text-content">
+                                    <h1 class="title1 wow fadeInUp" data-wow-duration="2000ms" data-wow-delay="0s">
+                                        @Html.Raw(slides[i].TieuDe)
+                                    </h1>
+                                    <p class="sub-title wow fadeInUp hidden-xs" data-wow-duration="2900ms" data-wow-delay=".5s">
+                                        @Html.Raw(slides[i].ChiTiet)
+                                    </p>
+                                    <div class="banner-readmore wow fadeInUp" data-wow-duration="3600ms" data-wow-delay=".6s">
+                                        <a class="button-default" href="@Html.Raw(slides[i].Link)">@UserLang.Detail</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+}
+    </div>
+</div>
+<!--End of Slider Area-->
